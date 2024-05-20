@@ -13,7 +13,7 @@ export default async function getWikiResults(searchTerm: string) {
     format: "json",
     origin: "*",
   });
-  //endpoint for english wikipedia api + ? query and searchParams
+  //endpoint for english wikipedia api + ? query cancatonate searchParams to end of string
   const response = await fetch(
     "https://en.wikipedia.org/w/api.php?" + searchParams
   );

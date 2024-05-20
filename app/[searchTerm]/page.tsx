@@ -1,4 +1,5 @@
 import getWikiResults from "@/lib/getWikiResults";
+import Item from "../components/Item";
 type Props = {
   params: {
     searchTerm: string;
@@ -33,7 +34,7 @@ export default async function page({ params: { searchTerm } }: Props) {
     <main className="bg-slate-200 mx-auto max-w-lg py-1 min-h-screen ">
       {results ? (
         Object.values(results).map((result) => {
-          return <p>{JSON.stringify(result)}</p>;
+          return <Item key={result.pageid} result={result} />;
         })
       ) : (
         <h2 className="p-2 text-xl">{`${searchTerm} Not Found!`}</h2>
