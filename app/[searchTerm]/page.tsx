@@ -7,7 +7,7 @@ type Props = {
 };
 
 //metadata
-export async function generateMetaData({ params: { searchTerm } }: Props) {
+export async function generateMetadata({ params: { searchTerm } }: Props) {
   const wikiData: Promise<SearchResult> = getWikiResults(searchTerm);
   const data = await wikiData;
   //browsers use %20 as spaces, get rid of these and replaace them with normal spaces
@@ -25,7 +25,7 @@ export async function generateMetaData({ params: { searchTerm } }: Props) {
   };
 }
 
-export default async function page({ params: { searchTerm } }: Props) {
+export default async function SearchResults({ params: { searchTerm } }: Props) {
   const wikiData: Promise<SearchResult> = getWikiResults(searchTerm);
   const data = await wikiData;
   //could be undefined
